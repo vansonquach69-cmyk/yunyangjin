@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>云阳烬 · 九歌拾遗</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-act="prologue">
+  <div id="effect-toasts" class="effect-toast-container" aria-hidden="true"></div>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="rain"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <main class="game">
+    <header class="hud">
+      <div class="title-line">
+        <div class="title-block">
+          <h1>云阳烬</h1>
+          <span class="subtitle">九歌拾遗 · 韩非线</span>
+        </div>
+        <button id="restart-btn" class="ghost-btn" type="button">重走此局</button>
+      </div>
+
+      <section class="status-panel" aria-label="状态">
+        <div class="stat">
+          <span class="stat-label">流沙信任</span>
+          <div class="bar"><div id="bar-trust" class="fill trust"></div></div>
+          <span id="val-trust" class="stat-val">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">韩国局势</span>
+          <div class="bar"><div id="bar-korea" class="fill korea"></div></div>
+          <span id="val-korea" class="stat-val">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">韩非心志</span>
+          <div class="bar"><div id="bar-mind" class="fill mind"></div></div>
+          <span id="val-mind" class="stat-val">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">史实偏离</span>
+          <div class="bar"><div id="bar-dev" class="fill dev"></div></div>
+          <span id="val-dev" class="stat-val">0</span>
+        </div>
+      </section>
+
+      <div class="chapter-bar">
+        <span id="chapter-label">序章</span>
+        <button id="history-btn" class="history-btn" type="button" title="查看本幕史实锚点">史</button>
+      </div>
+
+      <div id="tag-row" class="tag-row" aria-label="韩非的认知"></div>
+    </header>
+
+    <div id="epigraph-overlay" class="epigraph-overlay" hidden>
+      <div class="epigraph-content" id="epigraph-content"></div>
+    </div>
+
+    <section class="stage" id="stage">
+      <img id="scene-img" class="scene-img" alt="" />
+      <div class="scene-title">
+        <span id="scene-place" class="scene-place"></span>
+      </div>
+    </section>
+
+    <section class="textbox" id="textbox" hidden>
+      <img id="portrait" class="portrait" alt="" hidden />
+      <div class="dialogue-main">
+        <div class="speaker" id="speaker"></div>
+        <div class="text" id="text"></div>
+        <div class="next-hint" id="next-hint" aria-hidden="true">点击继续 ▾</div>
+      </div>
+    </section>
+
+    <section id="choices" class="choices" aria-label="你的选择"></section>
+
+    <footer class="foot-note">
+      <p>粉丝向非商用互动叙事测试 · 过程可改，结局不改</p>
+      <p class="build-with">Built with <span class="model-badge">Doubao Seed Evolving</span></p>
+    </footer>
+  </main>
+
+  <div id="ending-overlay" class="ending-overlay" hidden>
+    <div class="ending-card">
+      <p class="ending-eyebrow" id="ending-eyebrow">结局</p>
+      <h2 id="ending-title"></h2>
+      <div id="ending-body" class="ending-body"></div>
+      <div id="ending-epilogue" class="ending-epilogue" hidden></div>
+      <div id="ending-tags" class="ending-tags" hidden>
+        <p class="ending-tags-title">此局所信</p>
+        <div id="ending-tags-list" class="ending-tags-list"></div>
+      </div>
+      <div id="ending-recap" class="recap-section" hidden>
+        <p class="recap-title">羁绊回顾</p>
+        <div id="recap-grid" class="recap-grid"></div>
+      </div>
+      <div id="ending-gallery" class="gallery-section" hidden>
+        <p class="gallery-title">结局收集</p>
+        <div id="gallery-dots" class="gallery-dots"></div>
+      </div>
+      <p class="ending-anchor">史笔如铁：韩非终死于秦，韩亡，秦并天下。</p>
+      <button id="ending-restart" class="primary-btn" type="button">再走一局</button>
+    </div>
+  </div>
+
+  <div id="history-modal" class="history-modal" hidden>
+    <div class="history-card">
+      <p class="history-eyebrow">史实锚点</p>
+      <h3 id="history-title"></h3>
+      <div id="history-section-fact" class="history-section">
+        <p class="history-section-title">史实依据</p>
+        <p id="history-fact" class="history-note"></p>
+      </div>
+      <div id="history-section-fiction" class="history-section">
+        <p class="history-section-title history-section-title-fiction">艺术虚构</p>
+        <p id="history-fiction" class="history-note history-note-fiction"></p>
+      </div>
+      <p class="history-foot">史实有据，虚构有界。以下分别标注本幕所据史实与艺术加工。</p>
+      <button id="history-close" class="ghost-btn" type="button">合卷</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
