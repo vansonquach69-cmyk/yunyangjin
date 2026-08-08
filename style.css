@@ -358,7 +358,7 @@ body[data-act="ending"] .atmosphere {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding-top: 120px;
+  padding-top: 180px;
 }
 .epigraph-line {
   display: block;
